@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Send Msil</title>
+        <title>Send Mail</title>
     </head>
     <body>
         <h3>Send Test Email</h3>
