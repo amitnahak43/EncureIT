@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        
+        $posts = Post::latest()->get(); // fetch all posts
+        return view('index', compact('posts'));
     }
 
     /**
@@ -28,7 +29,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $start = microtime(true);
 
         $request->validate([
@@ -42,8 +42,9 @@ class PostController extends Controller
             'execution_time' => $executionTime
         ]);
 
-        return back()->with("success","Insert sucessfully");
+        $posts = Post::latest()->get();
 
+        return view('index', compact('posts'))->with("success", "Insert successfully");
     }
 
     /**

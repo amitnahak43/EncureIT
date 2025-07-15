@@ -12,7 +12,6 @@ class IpController extends Controller
 
     public function show(Request $request)
     {
-        // $res= Http::get('http://ip')
         $location = Location::get();
 
         $ip= $location->ip;

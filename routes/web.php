@@ -11,9 +11,7 @@ use App\Http\Controllers\JsonExportController;
 
 Route::resource('posts',PostController::class);
 
-Route::get('/', function () {
-    return view('create');
-});
+Route::get('/', [PostController::class,"index"]);
 
 Route::get('/ip-info',[IpController::class,"show"]);
 
