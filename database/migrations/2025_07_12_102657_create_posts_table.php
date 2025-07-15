@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
+            $table->float('execution_time', 10, 6);
             $table->timestamps();
         });
     }

@@ -29,15 +29,17 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        $start = microtime(true);
 
         $request->validate([
             'first_name'=>'required',
             'last_name'=>'required',
         ]);
-
+        $executionTime = microtime(true) - $start;
         Post::Create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
+            'execution_time' => $executionTime
         ]);
 
         return back()->with("success","Insert sucessfully");
